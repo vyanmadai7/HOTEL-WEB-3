@@ -1,0 +1,107 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@theme {
+  --color-delta-green: #0F2A24;
+  --color-delta-cream: #F5F3EE;
+  --color-delta-gold: #C6A66B;
+  --color-delta-charcoal: #1A1A1A;
+  
+  --font-serif: "Playfair Display", serif;
+  --font-sans: "Inter", sans-serif;
+}
+
+@layer base {
+  html.lenis, html.lenis body {
+    height: auto;
+  }
+
+  html {
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+  }
+
+  .scroll-snap-item {
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+  }
+
+  .lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+  }
+
+  .lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+  }
+
+  .lenis.lenis-stopped {
+    overflow: hidden;
+  }
+
+  .lenis.lenis-scrolling iframe {
+    pointer-events: none;
+  }
+
+  body {
+    @apply bg-delta-cream text-delta-charcoal font-sans antialiased selection:bg-delta-gold selection:text-white overflow-x-hidden;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif;
+  }
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
+
+.glass-nav {
+  @apply bg-delta-cream/80 backdrop-blur-md border-b border-delta-charcoal/5;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+.mask-fade-bottom {
+  mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+}
+
+.mask-fade-top {
+  mask-image: linear-gradient(to top, black 70%, transparent 100%);
+}
+
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F5F3EE;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #0F2A24;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #C6A66B;
+}
+
+/* Smooth Image Reveal Animation */
+@keyframes imageReveal {
+  from { clip-path: inset(0 100% 0 0); }
+  to { clip-path: inset(0 0 0 0); }
+}
+
+.animate-reveal {
+  animation: imageReveal 1.5s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+}
