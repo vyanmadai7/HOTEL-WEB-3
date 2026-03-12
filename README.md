@@ -1,1 +1,1 @@
-Vibe Coded with Gemini
+Vibe Coded with Gemini with my prompts
