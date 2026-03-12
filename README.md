@@ -1,1 +1,1 @@
-Vibe Coded with Gemini with my prompts
+Vibe Coded with Gemini with my prompts while listening songs
